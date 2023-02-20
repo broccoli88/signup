@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;500;700&family=Teko:wght@500;600&display=swap");
+
+:root {
+    --color-white: hsl(0, 0%, 100%);
+    --color-platinum: hsl(0, 0%, 85%);
+    --color-caribbean-current: hsl(183, 31%, 54%);
+    --color-lighter-caribbean-current: hsl(183, 31%, 74%);
+    --color-indigo-dye: hsl(204, 42%, 27%);
+    --color-jet: hsl(0, 0%, 17%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+body {
+    font-size: 1.6rem;
+    font-family: "Bai Jamjuree", sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    box-shadow: 0 0 30px hsl(0, 0%, 0%, 0.2);
+    overflow: hidden;
+    width: 80%;
+    max-width: 350px;
+}
+
+.form-item:first-of-type {
+    position: relative;
+}
+
+.form-item:first-of-type::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: rgb(0, 0, 0, 0.1);
+}
+
+.form-input,
+.btn {
+    padding: 1.8rem;
+    border: 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+    outline: transparent;
+}
+
+.form-input {
+    width: 100%;
+}
+
+.form-input::placeholder {
+    font-size: 1.2rem;
+    opacity: 0.3;
+    text-transform: uppercase;
+}
+
+.form-input:focus::placeholder {
+    color: teal;
+    opacity: 0.8;
+}
+
+.btn {
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+    .form {
+        flex-direction: row;
+        max-width: 600px;
+        padding: 0.5rem;
+    }
+
+    .form .form-item:nth-child(2) {
+        flex: 1;
+    }
+
+    .form-item:first-of-type::after {
+        right: 0;
+        left: initial;
+        top: 0;
+        width: 1px;
+        height: initial;
+    }
+
+    .btn {
+        margin-left: auto;
+        border-radius: 30px;
+    }
+}
